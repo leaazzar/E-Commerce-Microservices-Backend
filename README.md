@@ -179,7 +179,7 @@ Core capabilities include:
 ## Project Structure
 
 ```text
-Ecommerce_Azar_Chedid/
+E-Commerce-Microservices-Backend/
 │
 ├── Customer_services/
 │   ├── app.py
@@ -230,8 +230,8 @@ Make sure you have installed:
 ### Clone the repository
 
 ```bash
-git clone https://github.com/leaazzar/Ecommerce_Azar_Chedid.git
-cd Ecommerce_Azar_Chedid
+git clone https://github.com/leaazzar/E-Commerce-Microservices-Backend.git
+cd E-Commerce-Microservices-Backend
 ```
 
 ### Start the application
@@ -324,4 +324,12 @@ Tests cover service behavior, endpoint responses, input validation, and error sc
 
 ## Engineering Concepts Demonstrated
 
-This project was designed to apply several backend software-engineering concepts in
+This project was designed to apply several backend software-engineering concepts in a realistic, multi-service setting:
+
+- **Service decomposition** - each business domain (customers, inventory, sales, reviews) is an independent service with its own API and database
+- **Database-per-service** - services never share tables; they exchange data only through their REST APIs
+- **Distributed workflows** - the purchase flow coordinates customer, wallet, and inventory checks across service boundaries
+- **Failure handling** - services validate input and return structured HTTP errors, including when a dependent service is unavailable
+- **Observability** - per-service logging and health-check endpoints support debugging and monitoring
+- **Automated testing** - pytest suites verify endpoint behavior, validation rules, and error scenarios
+- **Containerization** - each service ships with its own Dockerfile and the full system runs with a single Docker Compose command
